@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2600 2600">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="30%" r="80%">
+      <stop offset="0" stop-color="#16124a"/>
+      <stop offset=".6" stop-color="#070821"/>
+      <stop offset="1" stop-color="#03040b"/>
+    </radialGradient>
+    <linearGradient id="g" x1="0" y1="0" x2=".35" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".22" stop-color="#7fe3ff"/>
+      <stop offset=".5" stop-color="#8b7bff"/>
+      <stop offset=".78" stop-color="#e04dff"/>
+      <stop offset="1" stop-color="#ff5fb8"/>
+    </linearGradient>
+  </defs>
+  <rect width="2600" height="2600" rx="560" fill="url(#bg)"/>
+  <path transform="translate(182 2040)" fill="url(#g)" d="M360 -20V-1428H134V-1500H726V-20ZM100 0V-72H946V0Z M1541 20Q1449 20 1385 -31Q1321 -82 1321 -196Q1321 -255 1346 -319Q1370 -384 1412 -453Q1453 -522 1505 -596Q1558 -671 1614 -751Q1647 -801 1681 -857Q1714 -912 1752 -980Q1790 -1048 1838 -1135H1196V-984H1124V-1500H2136Q2136 -1500 2109 -1449Q2081 -1398 2036 -1315Q1990 -1233 1935 -1134Q1879 -1036 1822 -939Q1765 -842 1716 -765Q1666 -684 1642 -640Q1619 -596 1612 -567Q1605 -538 1605 -501Q1605 -458 1628 -427Q1651 -395 1681 -364Q1711 -333 1734 -292Q1757 -251 1757 -189Q1757 -101 1699 -41Q1640 20 1541 20Z"/>
+</svg>

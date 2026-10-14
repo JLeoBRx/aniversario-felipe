@@ -1,0 +1,11 @@
+CHROMA MEMORIES 17 — VÍDEOS (Cena 03 · O filme)
+
+1. Coloque aqui os vídeos em MP4 (vídeo H.264 + áudio AAC).
+2. Liste-os no config.js, em "videos". O vídeo com  principal: true
+   (ou o primeiro da lista) ganha a capa ampla.
+3. Capas opcionais (imagens JPG) vão na pasta  capas/ .
+
+Nenhum vídeo começa sozinho: a reprodução só acontece com o play.
+Arquivos .MOV do celular podem ser convertidos com:
+  ffmpeg -i entrada.mov -c:v libx264 -crf 23 -preset slow -c:a aac -b:a 128k -movflags +faststart saida.mp4
+No GitHub o limite é 100 MB por arquivo; prefira vídeos abaixo de 50 MB.

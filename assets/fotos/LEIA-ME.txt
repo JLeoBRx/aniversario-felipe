@@ -1,0 +1,12 @@
+CHROMA MEMORIES 17 — FOTOGRAFIAS DA GALERIA (Cena 02 · Memórias)
+
+1. Coloque aqui as fotos (JPG, PNG ou WebP).
+   Fotos HEIC do iPhone precisam ser convertidas para JPG.
+2. Liste cada uma no arquivo config.js, em "fotos", por exemplo:
+       "assets/fotos/foto-01.jpg",
+3. Salve e recarregue a página.
+
+Use nomes simples, sem espaços e sem acentos (foto-01.jpg).
+Maiúsculas e minúsculas fazem diferença: FOTO.JPG é diferente de foto.jpg.
+Para carregar rápido no celular: lado maior com até 2500 px.
+As cores das fotos nunca são alteradas pelo site.

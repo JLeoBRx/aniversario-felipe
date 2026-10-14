@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>CHROMA MEMORIES 17 · Pedro Henrique &amp; Vitor Luis — Os melhores!</title>
+  <meta name="description" content="17 anos. Mil cores. Infinitas memórias. Uma celebração de momentos que merecem ser lembrados para sempre. Pedro Henrique &amp; Vitor Luis — os melhores!">
+  <meta name="theme-color" content="#04050f">
+  <meta name="color-scheme" content="dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="CHROMA MEMORIES 17">
+  <meta property="og:description" content="17 anos. Mil cores. Infinitas memórias. Pedro Henrique &amp; Vitor Luis — os melhores!">
+  <!-- Para a pré-visualização em redes sociais, troque pelo endereço completo
+       do site publicado (ex.: https://seu-usuario.github.io/aniversario-felipe/assets/img/compartilhar.jpg) -->
+  <meta property="og:image" content="assets/img/compartilhar.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/chroma.css">
+
+  <script>
+    /* Antes de pintar: marca JS ativo, preferência de movimento e se a abertura vai tocar. */
+    (function (d) {
+      var c = d.documentElement, cls = 'js', reduce = false, saved = null;
+      try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+      try { saved = window.localStorage.getItem('chroma-motion'); } catch (e) {}
+      if (saved) reduce = saved === 'reduced';
+      if (reduce) cls += ' motion-reduced';
+      else if (!location.hash || location.hash === '#abertura') cls += ' intro-pending';
+      c.className = c.className.replace('no-js', cls);
+      /* Pré-carrega a fonte do 17 quando publicado (em file:// o navegador bloqueia o preload). */
+      if (/^https?:$/.test(location.protocol)) {
+        var l = d.createElement('link');
+        l.rel = 'preload'; l.as = 'font'; l.type = 'font/woff2'; l.crossOrigin = 'anonymous';
+        l.href = 'assets/fonts/bodoni-moda-latin-opsz-normal.woff2';
+        d.head.appendChild(l);
+      }
+    })(document);
+  </script>
+  <script src="config.js" defer></script>
+  <script src="js/core.js" defer></script>
+  <script src="js/intro.js" defer></script>
+  <script src="js/particles.js" defer></script>
+  <script src="js/lightbox.js" defer></script>
+  <script src="js/gallery.js" defer></script>
+  <script src="js/videos.js" defer></script>
+  <script src="js/honor.js" defer></script>
+</head>
+<body data-scene="abertura">
+
+  <!-- Ícones reutilizados (SVG embutido: funciona também abrindo o arquivo direto) -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8.2 5.3v13.4L19 12z" fill="currentColor"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M14.5 5.5 8 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M9.5 5.5 16 12l-6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v15m-6-6 6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 20V5m-6 6 6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6.5 6.5 11 11m0-11-11 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 6v12M6 12h12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-replay" viewBox="0 0 24 24"><path d="M5 12a7 7 0 1 0 2.1-5M5 4.5V9h4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-motion" viewBox="0 0 24 24"><path d="M3 12c2.2-3.5 4.4-3.5 6.6 0s4.4 3.5 6.6 0 3.4-3 4.8-1.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".45"/></symbol>
+    <symbol id="i-photo" viewBox="0 0 48 48"><rect x="7" y="11" width="34" height="26" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="24" cy="24" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M15 11l2.5-4h13L33 11" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+    <symbol id="i-film" viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="28" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 10v28M36 10v28M6 17h6M6 24h6M6 31h6M36 17h6M36 24h6M36 31h6" stroke="currentColor" stroke-width="1.2"/><path d="M21 19.5v9l7.5-4.5z" fill="currentColor"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#memorias">Pular para o conteúdo</a>
+
+  <!-- ===== Atmosfera fixa: luzes de cena, partículas, grão e vinheta ===== -->
+  <div class="atmos" aria-hidden="true">
+    <div class="atmos__light atmos__light--a"></div>
+    <div class="atmos__light atmos__light--b"></div>
+    <div class="atmos__light atmos__light--c"></div>
+    <div class="atmos__light atmos__light--d"></div>
+    <div class="atmos__light atmos__light--e"></div>
+    <canvas class="atmos__particles" data-particles></canvas>
+  </div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="letterbox" aria-hidden="true"><span></span><span></span></div>
+
+  <!-- ===== Navegação ===== -->
+  <header class="topbar" data-topbar>
+    <a class="brand" href="#abertura">
+      <span class="brand__mark" aria-hidden="true">17</span>
+      <span class="brand__name">Chroma Memories<span class="sr-only"> 17 — voltar à abertura</span></span>
+    </a>
+
+    <nav class="nav" aria-label="Cenas da experiência">
+      <ol class="nav__list">
+        <li><a class="nav__link" href="#abertura" data-nav="abertura"><span class="nav__no" aria-hidden="true">01</span>Abertura</a></li>
+        <li><a class="nav__link" href="#memorias" data-nav="memorias"><span class="nav__no" aria-hidden="true">02</span>Memórias</a></li>
+        <li><a class="nav__link" href="#filme" data-nav="filme"><span class="nav__no" aria-hidden="true">03</span>O filme</a></li>
+        <li><a class="nav__link" href="#os-melhores" data-nav="melhores"><span class="nav__no" aria-hidden="true">04</span>Os melhores</a></li>
+        <li><a class="nav__link" href="#final" data-nav="final"><span class="nav__no" aria-hidden="true">05</span>Final</a></li>
+      </ol>
+    </nav>
+
+    <div class="topbar__tools">
+      <span class="topbar__scene" data-scene-label aria-hidden="true">01 · Abertura</span>
+      <button class="icon-btn" type="button" data-motion-toggle aria-pressed="false" title="Reduzir movimento">
+        <svg class="icon" aria-hidden="true"><use href="#i-motion"/></svg>
+        <span class="sr-only">Reduzir movimento</span>
+      </button>
+      <button class="menu-btn" type="button" data-menu-open aria-haspopup="dialog" aria-expanded="false" aria-controls="menu">
+        <span class="menu-btn__lines" aria-hidden="true"><span></span><span></span></span>
+        <span class="menu-btn__label">Menu</span>
+      </button>
+    </div>
+
+    <div class="progress" aria-hidden="true"><span class="progress__bar" data-progress></span></div>
+  </header>
+
+  <dialog class="menu" id="menu" aria-label="Menu de cenas">
+    <div class="menu__light" aria-hidden="true"></div>
+    <div class="menu__inner">
+      <div class="menu__top">
+        <p class="menu__brand"><span class="brand__mark" aria-hidden="true">17</span> Chroma Memories</p>
+        <button class="icon-btn icon-btn--lg" type="button" data-menu-close>
+          <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+          <span class="sr-only">Fechar menu</span>
+        </button>
+      </div>
+      <ol class="menu__list">
+        <li><a class="menu__link" href="#abertura"><span class="menu__no">01</span><span class="menu__name">Abertura</span></a></li>
+        <li><a class="menu__link" href="#memorias"><span class="menu__no">02</span><span class="menu__name">Memórias</span></a></li>
+        <li><a class="menu__link" href="#filme"><span class="menu__no">03</span><span class="menu__name">O filme</span></a></li>
+        <li><a class="menu__link" href="#os-melhores"><span class="menu__no">04</span><span class="menu__name">Os melhores</span></a></li>
+        <li><a class="menu__link" href="#final"><span class="menu__no">05</span><span class="menu__name">Final</span></a></li>
+      </ol>
+      <div class="menu__foot">
+        <button class="text-btn" type="button" data-motion-toggle aria-pressed="false">
+          <svg class="icon" aria-hidden="true"><use href="#i-motion"/></svg>
+          <span data-motion-label>Reduzir movimento</span>
+        </button>
+        <p class="menu__sign">Pedro Henrique &amp; Vitor Luis — Os melhores!</p>
+      </div>
+    </div>
+  </dialog>
+
+  <main id="conteudo">
+
+    <!-- =====================================================================
+         CENA 01 — ABERTURA
+         ===================================================================== -->
+    <section class="scene opening" id="abertura" data-scene="abertura" aria-labelledby="titulo-abertura">
+      <div class="opening__light" aria-hidden="true">
+        <span class="ol ol--edge-l"></span>
+        <span class="ol ol--edge-r"></span>
+        <span class="ol ol--rays"></span>
+        <span class="ol ol--field"></span>
+        <span class="ol ol--core"></span>
+      </div>
+
+      <p class="opening__presents" aria-hidden="true"><span>Chroma Memories</span> <em>apresenta</em></p>
+
+      <div class="opening__stage">
+        <h1 class="opening__title" id="titulo-abertura">
+          <span class="sr-only">Chroma Memories 17</span>
+          <span class="seventeen" data-seventeen aria-hidden="true">
+            <span class="seventeen__inner">
+              <span class="seventeen__glow">17</span>
+              <span class="seventeen__ghost seventeen__ghost--c">17</span>
+              <span class="seventeen__ghost seventeen__ghost--m">17</span>
+              <span class="seventeen__main">17</span>
+              <span class="seventeen__shine">17</span>
+            </span>
+            <span class="seventeen__horizon"></span>
+            <span class="seventeen__reflection">17</span>
+          </span>
+        </h1>
+
+        <p class="tagline">
+          <span class="tagline__part">17 anos.</span>
+          <span class="tagline__part tagline__part--chroma">Mil cores.</span>
+          <span class="tagline__part">Infinitas memórias.</span>
+        </p>
+
+        <p class="opening__lede">“Uma celebração de momentos que merecem ser lembrados para sempre.”</p>
+
+        <div class="opening__credit">
+          <span class="opening__beamline" aria-hidden="true"></span>
+          <p class="duo-names"><span class="duo-names__one">Pedro Henrique</span> <span class="amp">&amp;</span> <span class="duo-names__two">Vitor Luis</span></p>
+          <p class="signature"><span class="signature__line" aria-hidden="true"></span><span class="signature__text">Os melhores!</span><span class="signature__line" aria-hidden="true"></span></p>
+        </div>
+
+        <a class="continue" href="#memorias" data-continue>
+          <span class="continue__label">Continuar</span>
+          <span class="continue__cue" aria-hidden="true"><span></span></span>
+        </a>
+      </div>
+
+      <button class="skip-intro" type="button" data-skip-intro>
+        <span class="skip-intro__label">Pular abertura</span>
+        <span class="skip-intro__bar" aria-hidden="true"><span></span></span>
+      </button>
+    </section>
+
+    <div class="thread" aria-hidden="true" data-reveal="thread"><span></span></div>
+
+    <!-- =====================================================================
+         CENA 02 — MEMÓRIAS (galeria)
+         ===================================================================== -->
+    <section class="scene gallery-scene" id="memorias" data-scene="memorias" aria-labelledby="titulo-memorias">
+      <header class="scene-head">
+        <p class="slate" data-reveal><span class="slate__no">Cena 02</span><span class="slate__rule" aria-hidden="true"></span><span class="slate__name">Memórias</span></p>
+        <h2 class="scene-title" id="titulo-memorias" data-reveal style="--d: .12s">Memórias <em>em luz</em></h2>
+        <p class="scene-lede" data-reveal style="--d: .24s">Cada fotografia surge do escuro e ganha a luz que merece. Toque em uma imagem para vê-la ampliada.</p>
+      </header>
+
+      <div class="gallery" data-gallery></div>
+      <noscript><p class="noscript-note">Ative o JavaScript para ver a galeria de fotografias.</p></noscript>
+    </section>
+
+    <div class="thread thread--film" aria-hidden="true" data-reveal="thread"><span></span></div>
+
+    <!-- =====================================================================
+         CENA 03 — O FILME (vídeos)
+         ===================================================================== -->
+    <section class="scene film-scene" id="filme" data-scene="filme" aria-labelledby="titulo-filme">
+      <div class="film__beam" aria-hidden="true"></div>
+      <header class="scene-head scene-head--center">
+        <p class="slate" data-reveal><span class="slate__no">Cena 03</span><span class="slate__rule" aria-hidden="true"></span><span class="slate__name">O filme</span></p>
+        <h2 class="scene-title" id="titulo-filme" data-reveal style="--d: .12s">O filme dos <em>melhores momentos</em></h2>
+        <p class="scene-lede" data-reveal style="--d: .24s">Uma sessão para rever, quantas vezes quiser, o que merece voltar à tela. Nenhum vídeo começa sozinho: o play é seu.</p>
+      </header>
+
+      <div class="feature-wrap" data-feature data-reveal="screen"></div>
+
+      <div class="reel" data-reel-wrap>
+        <div class="reel__head" data-reveal>
+          <h3 class="reel__title"><span class="reel__no" aria-hidden="true">03.1</span> Mais cenas</h3>
+          <div class="reel__nav">
+            <button class="round-btn" type="button" data-reel-prev>
+              <svg class="icon" aria-hidden="true"><use href="#i-left"/></svg><span class="sr-only">Vídeos anteriores</span>
+            </button>
+            <button class="round-btn" type="button" data-reel-next>
+              <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg><span class="sr-only">Próximos vídeos</span>
+            </button>
+          </div>
+        </div>
+        <ul class="reel__track" data-reel></ul>
+      </div>
+      <noscript><p class="noscript-note">Ative o JavaScript para assistir aos vídeos.</p></noscript>
+    </section>
+
+    <div class="thread thread--honor" aria-hidden="true" data-reveal="thread"><span></span></div>
+
+    <!-- =====================================================================
+         CENA 04 — OS MELHORES (homenagem)
+         ===================================================================== -->
+    <section class="scene honor" id="os-melhores" data-scene="melhores" aria-labelledby="titulo-melhores">
+      <div class="honor__lights" aria-hidden="true">
+        <span class="spot spot--a"></span>
+        <span class="spot spot--b"></span>
+        <span class="spot spot--c"></span>
+      </div>
+
+      <header class="scene-head scene-head--center honor__head">
+        <p class="slate" data-reveal><span class="slate__no">Cena 04</span><span class="slate__rule" aria-hidden="true"></span><span class="slate__name">Homenagem</span></p>
+        <h2 class="honor__title" id="titulo-melhores" data-reveal style="--d: .1s">Os melhores.</h2>
+      </header>
+
+      <div class="honor__stage" data-honor>
+        <span class="honor__beam" aria-hidden="true"></span>
+
+        <figure class="honor__duo" data-slot="juntos"></figure>
+
+        <div class="honor__credits">
+          <p class="honor__names">
+            <span class="honor__name honor__name--a"><span class="honor__ln">Pedro</span> <span class="honor__ln">Henrique</span></span>
+            <span class="honor__amp"><span aria-hidden="true">&amp;</span><span class="sr-only">e</span></span>
+            <span class="honor__name honor__name--b"><span class="honor__ln">Vitor</span> <span class="honor__ln">Luis</span></span>
+          </p>
+          <div class="honor__portraits">
+            <figure class="honor__portrait honor__portrait--a" data-slot="pedroHenrique"></figure>
+            <figure class="honor__portrait honor__portrait--b" data-slot="vitorLuis"></figure>
+          </div>
+        </div>
+      </div>
+
+      <blockquote class="honor__quote" data-honor-quote>
+        <p>
+          <span class="honor__q">Alguns momentos passam.</span>
+          <span class="honor__q">As histórias permanecem.</span>
+          <span class="honor__q">E as melhores lembranças são aquelas que merecem ser revividas.</span>
+        </p>
+      </blockquote>
+    </section>
+
+    <div class="thread thread--final" aria-hidden="true" data-reveal="thread"><span></span></div>
+
+    <!-- =====================================================================
+         CENA 05 — FINAL (encerramento)
+         ===================================================================== -->
+    <section class="scene finale" id="final" data-scene="final" aria-labelledby="titulo-final" data-finale>
+      <div class="finale__dawn" aria-hidden="true"></div>
+
+      <svg class="finale__seventeen" viewBox="0 0 1000 760" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="finale-stroke" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ffffff"/>
+            <stop offset=".25" stop-color="#7fe3ff"/>
+            <stop offset=".5" stop-color="#8b7bff"/>
+            <stop offset=".75" stop-color="#e04dff"/>
+            <stop offset="1" stop-color="#ff7fc8"/>
+          </linearGradient>
+          <linearGradient id="finale-fill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#8b7bff" stop-opacity=".16"/>
+            <stop offset="1" stop-color="#8b7bff" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <text x="500" y="655" text-anchor="middle">17</text>
+      </svg>
+
+      <div class="finale__photos" data-finale-photos aria-hidden="true"></div>
+
+      <div class="finale__content">
+        <p class="slate slate--center"><span class="slate__no">Cena 05</span><span class="slate__rule" aria-hidden="true"></span><span class="slate__name">Final</span></p>
+        <h2 class="finale__title" id="titulo-final">
+          <span class="finale__years">17 anos.</span>
+          <span class="finale__line">E a história está só começando.</span>
+        </h2>
+        <p class="finale__lede">“Que as melhores lembranças continuem vivas e que muitos outros momentos especiais ainda estejam por vir.”</p>
+        <p class="finale__sign">
+          <span class="finale__names">Pedro Henrique <span class="amp">&amp;</span> Vitor Luis</span>
+          <span class="finale__dash" aria-hidden="true">—</span>
+          <span class="finale__best">Os melhores!</span>
+        </p>
+        <div class="finale__actions">
+          <a class="btn btn--primary" href="#abertura" data-back-top>
+            <svg class="icon" aria-hidden="true"><use href="#i-up"/></svg>
+            <span>Voltar ao início</span>
+          </a>
+          <button class="btn btn--ghost" type="button" data-replay>
+            <svg class="icon" aria-hidden="true"><use href="#i-replay"/></svg>
+            <span>Rever a abertura</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><span class="footer__brand">Chroma Memories 17</span> <span class="footer__sep" aria-hidden="true">·</span> Pedro Henrique &amp; Vitor Luis <span class="footer__sep" aria-hidden="true">·</span> Os melhores!</p>
+  </footer>
+
+  <!-- ===== Visualização ampliada de fotografias ===== -->
+  <dialog class="lightbox" data-lightbox aria-label="Fotografia ampliada">
+    <div class="lightbox__backdrop" data-lightbox-backdrop></div>
+    <div class="lightbox__stage" data-lightbox-stage>
+      <figure class="lightbox__figure" data-lightbox-figure>
+        <figcaption class="lightbox__caption" aria-live="polite">
+          <span class="lightbox__count" data-lightbox-count></span>
+          <span class="lightbox__text" data-lightbox-text></span>
+        </figcaption>
+      </figure>
+    </div>
+    <button class="round-btn lightbox__close" type="button" data-lightbox-close>
+      <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg><span class="sr-only">Fechar (Esc)</span>
+    </button>
+    <button class="round-btn lightbox__nav lightbox__nav--prev" type="button" data-lightbox-prev>
+      <svg class="icon" aria-hidden="true"><use href="#i-left"/></svg><span class="sr-only">Fotografia anterior</span>
+    </button>
+    <button class="round-btn lightbox__nav lightbox__nav--next" type="button" data-lightbox-next>
+      <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg><span class="sr-only">Próxima fotografia</span>
+    </button>
+  </dialog>
+
+  <!-- ===== Sala de projeção (player de vídeo) ===== -->
+  <dialog class="player" data-player aria-labelledby="player-title">
+    <div class="player__curtain" aria-hidden="true"></div>
+    <div class="player__inner">
+      <div class="player__bar">
+        <div class="player__heading">
+          <p class="player__kicker">Agora em cena</p>
+          <h2 class="player__title" id="player-title" data-player-title>Vídeo</h2>
+        </div>
+        <button class="round-btn" type="button" data-player-close>
+          <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg><span class="sr-only">Fechar vídeo (Esc)</span>
+        </button>
+      </div>
+      <div class="player__screen" data-player-screen></div>
+      <p class="player__error" data-player-error hidden></p>
+    </div>
+  </dialog>
+
+  <div class="notice" data-notice role="status" hidden></div>
+</body>
+</html>

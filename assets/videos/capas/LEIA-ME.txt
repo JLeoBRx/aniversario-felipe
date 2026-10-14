@@ -1,0 +1,3 @@
+Capas opcionais dos vídeos (JPG/PNG/WebP), configuradas no config.js com:
+  capa: "assets/videos/capas/nome-da-capa.jpg"
+Sem capa, a miniatura é um quadro do próprio vídeo.
