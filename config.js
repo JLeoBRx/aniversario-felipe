@@ -1,5 +1,6 @@
 /* ==========================================================================
    CHROMA MEMORIES 17 — CONFIGURAÇÃO DE FOTOS E VÍDEOS
+   Felipe, 17 anos · Pedro Henrique & Victor Luis — Os melhores!
    --------------------------------------------------------------------------
    Este é o único arquivo que você precisa editar para colocar o material
    no site. Não é preciso saber programar:
@@ -86,10 +87,10 @@ window.CHROMA_CONFIG = {
      HOMENAGEM — CENA 04 · OS MELHORES
      Pasta sugerida: assets/fotos/os-melhores/
 
-     juntos        → foto de Pedro Henrique e Vitor Luis juntos.
+     juntos        → foto de Pedro Henrique e Victor Luis juntos.
                      É o ponto central da seção.
      pedroHenrique → retrato de Pedro Henrique (opcional).
-     vitorLuis     → retrato de Vitor Luis (opcional).
+     victorLuis    → retrato de Victor Luis (opcional).
 
      Cada campo aceita só o caminho ("assets/...") ou um objeto
      { arquivo: "...", descricao: "...", foco: "50% 30%" }.
@@ -98,7 +99,7 @@ window.CHROMA_CONFIG = {
   homenagem: {
     juntos:        "",   // ex.: "assets/fotos/os-melhores/juntos.jpg"
     pedroHenrique: "",   // ex.: "assets/fotos/os-melhores/pedro-henrique.jpg"
-    vitorLuis:     ""    // ex.: "assets/fotos/os-melhores/vitor-luis.jpg"
+    victorLuis:    ""    // ex.: "assets/fotos/os-melhores/victor-luis.jpg"
   },
 
   /* ------------------------------------------------------------------------

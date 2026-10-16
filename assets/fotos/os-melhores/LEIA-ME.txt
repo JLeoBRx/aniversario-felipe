@@ -1,6 +1,6 @@
 CHROMA MEMORIES 17 — FOTOS DA HOMENAGEM (Cena 04 · Os melhores)
 
 Nomes sugeridos (configure em config.js, na parte "homenagem"):
-  juntos.jpg          → Pedro Henrique e Vitor Luis juntos (ponto central da cena)
+  juntos.jpg          → Pedro Henrique e Victor Luis juntos (ponto central da cena)
   pedro-henrique.jpg  → retrato de Pedro Henrique (opcional)
-  vitor-luis.jpg      → retrato de Vitor Luis (opcional)
+  victor-luis.jpg     → retrato de Victor Luis (opcional)

@@ -34,6 +34,7 @@
   var running = false, rafId = 0, last = 0;
   var dialogsOpen = false;
   var sprites = {};
+  var meteors = [], nextMeteor = 0;
 
   function rgba(hex, a) {
     var n = parseInt(hex.slice(1), 16);
@@ -90,7 +91,60 @@
     if (!running) draw(0);
   }
 
-  function draw(dt) {
+  /* Estrelas cadentes: de vez em quando, um risco de luz atravessa o céu. */
+  function spawnMeteor() {
+    var fromLeft = Math.random() < 0.5;
+    var angle = (fromLeft ? 24 : 156) + (Math.random() * 14 - 7);
+    var rad = angle * Math.PI / 180;
+    var speed = 0.85 + Math.random() * 0.6;
+    meteors.push({
+      x: fromLeft ? Math.random() * W * 0.55 : W * 0.45 + Math.random() * W * 0.55,
+      y: Math.random() * H * 0.38,
+      vx: Math.cos(rad) * speed,
+      vy: Math.sin(rad) * speed,
+      len: 110 + Math.random() * 150,
+      life: 0,
+      ttl: 650 + Math.random() * 550,
+      tint: pick()
+    });
+  }
+
+  function drawMeteors(dt, now) {
+    if (dt) {
+      if (!nextMeteor) nextMeteor = now + 2500 + Math.random() * 3000;
+      if (now >= nextMeteor) {
+        spawnMeteor();
+        nextMeteor = now + 4200 + Math.random() * 6500;
+      }
+    }
+    for (var i = meteors.length - 1; i >= 0; i--) {
+      var m = meteors[i];
+      m.x += m.vx * dt;
+      m.y += m.vy * dt;
+      m.life += dt;
+      var k = m.life / m.ttl;
+      if (k >= 1) { meteors.splice(i, 1); continue; }
+      var alpha = k < 0.2 ? k / 0.2 : 1 - (k - 0.2) / 0.8;
+      var sp = Math.sqrt(m.vx * m.vx + m.vy * m.vy) || 1;
+      var tx = m.x - (m.vx / sp) * m.len, ty = m.y - (m.vy / sp) * m.len;
+      var g = ctx.createLinearGradient(m.x, m.y, tx, ty);
+      g.addColorStop(0, rgba('#ffffff', 0.9 * alpha));
+      g.addColorStop(0.25, rgba(m.tint, 0.45 * alpha));
+      g.addColorStop(1, rgba(m.tint, 0));
+      ctx.globalAlpha = 1;
+      ctx.strokeStyle = g;
+      ctx.lineWidth = 1.5;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(m.x, m.y);
+      ctx.lineTo(tx, ty);
+      ctx.stroke();
+      ctx.globalAlpha = alpha;
+      ctx.drawImage(sprite('#ffffff'), m.x - 7, m.y - 7, 14, 14);
+    }
+  }
+
+  function draw(dt, now) {
     ctx.clearRect(0, 0, W, H);
     ctx.globalCompositeOperation = 'lighter';
     var sy = window.pageYOffset || 0;
@@ -114,6 +168,7 @@
       ctx.globalAlpha = p.a * twinkle;
       ctx.drawImage(sprite(p.c), p.x - d / 2, y - d / 2, d, d);
     }
+    if (dt || meteors.length) drawMeteors(dt, now || 0);
     ctx.globalAlpha = 1;
     ctx.globalCompositeOperation = 'source-over';
   }
@@ -125,7 +180,7 @@
     var dt = t - last;
     if (FRAME_MS && dt < FRAME_MS - 2) return;
     last = t;
-    draw(Math.min(dt, 64));
+    draw(Math.min(dt, 64), t);
   }
 
   function start() {

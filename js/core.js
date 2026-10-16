@@ -228,7 +228,8 @@
     honor: {
       duo: photo(honor.juntos),
       pedro: photo(honor.pedroHenrique),
-      vitor: photo(honor.vitorLuis)
+      /* "vitorLuis" continua aceito para quem usou a grafia antiga. */
+      victor: photo(honor.victorLuis || honor.vitorLuis)
     },
     finalePhotos: list(finale.fotos, photo)
   };
@@ -269,6 +270,7 @@
     var note = o.missing ? el('span', { class: 'ph__note', text: o.note || '' }) : null;
     if (note && !o.note) note.hidden = true;
     return el('div', { class: 'ph' + (o.missing ? ' ph--missing' : '') }, [
+      el('span', { class: 'ph__aurora', 'aria-hidden': 'true' }),
       el('div', { class: 'ph__inner' }, [
         icon(o.kind === 'video' ? 'i-film' : 'i-photo', 'ph__icon'),
         o.label ? el('span', { class: 'ph__label', text: o.label }) : null,
@@ -392,6 +394,27 @@
     if (revealIO) revealIO.observe(node);
     else node.classList.add('is-in');
   };
+
+  /* Animações em laço só rodam no trecho visível da página: cenas, faixas e
+     interlúdios fora da tela ficam pausados (economia de bateria). */
+  if (hasIO) {
+    var idleIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        entry.target.classList.toggle('is-offscreen', !entry.isIntersecting);
+      });
+    }, { rootMargin: '120px 0px' });
+    $$('main > section, main > .marquee').forEach(function (node) {
+      if (node.id !== 'abertura') idleIO.observe(node);
+    });
+  }
+
+  /* Títulos que sobem de trás de uma linha invisível (máscara). */
+  $$('[data-reveal="mask"]').forEach(function (node) {
+    var inner = doc.createElement('span');
+    inner.className = 'mask__in';
+    while (node.firstChild) inner.appendChild(node.firstChild);
+    node.appendChild(inner);
+  });
   $$('[data-reveal]').forEach(C.reveal);
 
   /* Esconde uma cena inteira (ex.: galeria sem fotos e sem espaços reservados). */
@@ -555,6 +578,31 @@
 
   function closeMenu() { C.modal.close(menu, 320); }
 
+  /* Salto para uma cena. A versão com cortina cinematográfica é instalada
+     por js/effects.js; esta é a versão simples (e a de movimento reduzido). */
+  C.jump = function (hash, opts) {
+    var target = hash && hash.length > 1 ? doc.querySelector(hash) : null;
+    if (!target) return;
+    if ((opts && opts.instant) || reduced) {
+      var previous = root.style.scrollBehavior;
+      root.style.scrollBehavior = 'auto';
+      target.scrollIntoView({ block: 'start' });
+      root.style.scrollBehavior = previous;
+    } else {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    try { if (history.pushState) history.pushState(null, '', hash); } catch (err) { /* file:// */ }
+    if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+    try { target.focus({ preventScroll: true }); } catch (err) { /* ignora */ }
+  };
+
+  doc.addEventListener('click', function (e) {
+    var link = e.target.closest ? e.target.closest('a[data-jump]') : null;
+    if (!link || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.button > 0) return;
+    e.preventDefault();
+    C.jump(link.getAttribute('href'));
+  });
+
   if (menu && menuOpenBtn) {
     menuOpenBtn.addEventListener('click', function () {
       menuOpen = true;
@@ -577,14 +625,7 @@
         e.preventDefault();
         C.modal.setReturnFocus(menu, null);
         C.modal.close(menu, 260);
-        setTimeout(function () {
-          var target = doc.querySelector(hash);
-          if (!target) return;
-          target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
-          try { if (history.pushState) history.pushState(null, '', hash); } catch (err) { /* file:// */ }
-          target.setAttribute('tabindex', '-1');
-          try { target.focus({ preventScroll: true }); } catch (err) { /* ignora */ }
-        }, reduced ? 80 : 320);
+        setTimeout(function () { C.jump(hash); }, reduced ? 80 : 300);
       });
     });
   }

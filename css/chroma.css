@@ -16,7 +16,8 @@
    13. Cena 04 — Os melhores
    14. Cena 05 — Final
    15. Rodapé e avisos
-   16. Movimento reduzido e impressão
+   16. Camada de animações (nome, faixas, números, cortina, cursor…)
+   17. Movimento reduzido e impressão
 
    Regra de cor: nenhum laranja ou tom alaranjado. Vermelhos ficam no
    rubi/carmim (matiz ≥ 330°), amarelos e dourados no limão/champanhe
@@ -254,32 +255,32 @@ section[tabindex="-1"]:focus { outline: none; }
 /* Paleta de luz por cena — mudanças graduais de cor entre cenas.
    Cada luz só transita entre cores frias/violetas, ou entre rubi e
    magenta/violeta; nunca entre vermelho e amarelo. */
-body[data-scene="abertura"] .atmos__light--a { --c: #5a24f0; --x: -4vw;  --y: 80vh;  --o: .5; }
-body[data-scene="abertura"] .atmos__light--b { --c: #2a4dff; --x: 104vw; --y: 2vh;   --o: .42; }
+body[data-scene="abertura"] .atmos__light--a { --c: #5a24f0; --x: -4vw;  --y: 80vh;  --o: .56; }
+body[data-scene="abertura"] .atmos__light--b { --c: #2a4dff; --x: 104vw; --y: 2vh;   --o: .48; }
 body[data-scene="abertura"] .atmos__light--c { --c: #19c8ff; --x: 50vw;  --y: 42vh;  --o: .14; --k: .8; }
 body[data-scene="abertura"] .atmos__light--d { --c: #ff1fbf; --x: 84vw;  --y: 96vh;  --o: .18; }
 body[data-scene="abertura"] .atmos__light--e { --c: #0b1a5c; --x: 30vw;  --y: 112vh; --o: .7; }
 
-body[data-scene="memorias"] .atmos__light--a { --c: #0fb98a; --x: -8vw;  --y: 34vh;  --o: .26; }
-body[data-scene="memorias"] .atmos__light--b { --c: #2347ff; --x: 106vw; --y: 16vh;  --o: .32; }
+body[data-scene="memorias"] .atmos__light--a { --c: #0fb98a; --x: -8vw;  --y: 34vh;  --o: .32; }
+body[data-scene="memorias"] .atmos__light--b { --c: #2347ff; --x: 106vw; --y: 16vh;  --o: .37; }
 body[data-scene="memorias"] .atmos__light--c { --c: #19d6c8; --x: 92vw;  --y: 98vh;  --o: .16; }
-body[data-scene="memorias"] .atmos__light--d { --c: #6a3bff; --x: 10vw;  --y: 106vh; --o: .26; }
+body[data-scene="memorias"] .atmos__light--d { --c: #6a3bff; --x: 10vw;  --y: 106vh; --o: .31; }
 body[data-scene="memorias"] .atmos__light--e { --c: #0a2350; --x: 50vw;  --y: 50vh;  --o: .5; }
 
 body[data-scene="filme"] .atmos__light--a { --c: #3b2bd6; --x: 2vw;   --y: 8vh;   --o: .26; }
-body[data-scene="filme"] .atmos__light--b { --c: #2c56ff; --x: 50vw;  --y: 34vh;  --o: .26; --k: .9; }
+body[data-scene="filme"] .atmos__light--b { --c: #2c56ff; --x: 50vw;  --y: 34vh;  --o: .3; --k: .9; }
 body[data-scene="filme"] .atmos__light--c { --c: #1fb6ff; --x: 102vw; --y: 72vh;  --o: .1; }
-body[data-scene="filme"] .atmos__light--d { --c: #c0104f; --x: 6vw;   --y: 104vh; --o: .3; }
+body[data-scene="filme"] .atmos__light--d { --c: #c0104f; --x: 6vw;   --y: 104vh; --o: .34; }
 body[data-scene="filme"] .atmos__light--e { --c: #250b4a; --x: 92vw;  --y: 106vh; --o: .6; }
 
-body[data-scene="melhores"] .atmos__light--a { --c: #19c6ff; --x: -6vw;  --y: 46vh;  --o: .3; }
-body[data-scene="melhores"] .atmos__light--b { --c: #ff2fb8; --x: 106vw; --y: 46vh;  --o: .26; }
-body[data-scene="melhores"] .atmos__light--c { --c: #7b3dff; --x: 50vw;  --y: -2vh;  --o: .32; }
+body[data-scene="melhores"] .atmos__light--a { --c: #19c6ff; --x: -6vw;  --y: 46vh;  --o: .36; }
+body[data-scene="melhores"] .atmos__light--b { --c: #ff2fb8; --x: 106vw; --y: 46vh;  --o: .32; }
+body[data-scene="melhores"] .atmos__light--c { --c: #7b3dff; --x: 50vw;  --y: -2vh;  --o: .37; }
 body[data-scene="melhores"] .atmos__light--d { --c: #c99bff; --x: 50vw;  --y: 106vh; --o: .14; }
 body[data-scene="melhores"] .atmos__light--e { --c: #2a0f5c; --x: 50vw;  --y: 60vh;  --o: .55; }
 
-body[data-scene="final"] .atmos__light--a { --c: #6b2bff; --x: 0vw;   --y: 32vh;  --o: .36; }
-body[data-scene="final"] .atmos__light--b { --c: #2a4dff; --x: 100vw; --y: 24vh;  --o: .34; }
+body[data-scene="final"] .atmos__light--a { --c: #6b2bff; --x: 0vw;   --y: 32vh;  --o: .41; }
+body[data-scene="final"] .atmos__light--b { --c: #2a4dff; --x: 100vw; --y: 24vh;  --o: .39; }
 body[data-scene="final"] .atmos__light--c { --c: #12c98f; --x: 50vw;  --y: 114vh; --o: .2; }
 body[data-scene="final"] .atmos__light--d { --c: #ff2bd6; --x: 92vw;  --y: 92vh;  --o: .16; }
 body[data-scene="final"] .atmos__light--e { --c: #0b1a5c; --x: 50vw;  --y: 50vh;  --o: .55; }
@@ -902,7 +903,9 @@ body[data-scene="final"] .atmos__light--e { --c: #0b1a5c; --x: 50vw;  --y: 50vh;
 
 /* 07. Cena 01 — Abertura ------------------------------------------------- */
 .opening {
-  --size-17: clamp(8.5rem, min(44vh, 66vw), 34rem);
+  --size-17: clamp(8.5rem, min(41vh, 62vw), 32rem);
+  --mx: 0;
+  --my: 0;
   position: relative;
   isolation: isolate;
   min-height: 100vh;
@@ -917,7 +920,7 @@ body[data-scene="final"] .atmos__light--e { --c: #0b1a5c; --x: 50vw;  --y: 50vh;
   overflow: clip;
 }
 @supports (height: 1svh) {
-  .opening { --size-17: clamp(8.5rem, min(44svh, 66vw), 34rem); }
+  .opening { --size-17: clamp(8.5rem, min(41svh, 62vw), 32rem); }
 }
 
 /* Luzes da abertura */
@@ -926,8 +929,6 @@ body[data-scene="final"] .atmos__light--e { --c: #0b1a5c; --x: 50vw;  --y: 50vh;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  --mx: 0;
-  --my: 0;
 }
 .ol { position: absolute; border-radius: 50%; }
 .ol--edge-l {
@@ -1101,7 +1102,7 @@ body[data-scene="final"] .atmos__light--e { --c: #0b1a5c; --x: 50vw;  --y: 50vh;
 .tagline {
   position: relative;
   z-index: 1;
-  margin-top: clamp(1.6rem, 4.6vh, 2.8rem);
+  margin-top: calc(var(--size-17) * .23 + clamp(.9rem, 2.6vh, 1.7rem));
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1373,7 +1374,10 @@ body[data-scene="final"] .atmos__light--e { --c: #0b1a5c; --x: 50vw;  --y: 50vh;
 .intro-done .seventeen__shine { animation: shine-loop 11s var(--ease-inout) 2.5s infinite; }
 .intro-done .signature__text { animation: gold-drift 9s linear infinite; }
 .opening.is-offscreen *,
-.opening.is-offscreen { animation-play-state: paused !important; }
+.opening.is-offscreen,
+.is-offscreen *,
+.is-offscreen *::before,
+.is-offscreen *::after { animation-play-state: paused !important; }
 
 @keyframes breathe { to { opacity: .72; transform: scale(1.06); } }
 @keyframes breathe-core { to { opacity: .7; transform: scale(.92); } }
@@ -1497,14 +1501,15 @@ body[data-scene="final"] .atmos__light--e { --c: #0b1a5c; --x: 50vw;  --y: 50vh;
   height: 100%;
   object-fit: cover;
   object-position: var(--focus, 50% 50%);
-  transform: scale(1.07);
+  transform: scale(1.17);
+  translate: 0 var(--ip, 0px);
   transition: transform 1.9s var(--ease-out);
   user-select: none;
   -webkit-user-drag: none;
 }
-.shot.is-lit .shot__frame img { transform: scale(1); }
+.shot.is-lit .shot__frame img { transform: scale(1.09); }
 @media (hover: hover) {
-  .shot.is-lit .shot__frame:hover img { transform: scale(1.03); }
+  .shot.is-lit .shot__frame:hover img { transform: scale(1.12); }
   .shot.is-lit .shot__frame:hover {
     box-shadow:
       0 0 0 1px rgb(var(--glow-rgb) / .45),
@@ -1832,12 +1837,11 @@ body[data-scene="final"] .atmos__light--e { --c: #0b1a5c; --x: 50vw;  --y: 50vh;
 }
 .feature .play {
   position: absolute;
-  left: 50%;
-  top: 46%;
-  translate: -50% -50%;
+  inset: -8% 0 0 0;
+  margin: auto;
 }
 @media (max-width: 40em) {
-  .feature .play { top: 38%; }
+  .feature .play { inset: -24% 0 0 0; }
   .feature__desc { display: none; }
 }
 .feature__screen.is-empty .ph { position: absolute; inset: 0; }
@@ -1932,8 +1936,8 @@ body[data-scene="final"] .atmos__light--e { --c: #0b1a5c; --x: 50vw;  --y: 50vh;
 .reel__nav.is-hidden { visibility: hidden; }
 .reel__track {
   list-style: none;
-  margin: 0 calc(var(--gutter) * -1);
-  padding: .6rem var(--gutter) 1.8rem;
+  margin: 0;
+  padding: .9rem var(--gutter) 1.6rem;
   display: flex;
   align-items: flex-end;
   gap: clamp(.9rem, 2vw, 1.6rem);
@@ -2175,6 +2179,9 @@ body[data-scene="final"] .atmos__light--e { --c: #0b1a5c; --x: 50vw;  --y: 50vh;
   line-height: .92;
   letter-spacing: -.02em;
   text-transform: uppercase;
+}
+.no-js .honor__title,
+.honor__title .mask__in {
   background:
     radial-gradient(60% 50% at 30% 0%, rgb(255 255 255 / .6), transparent 70%),
     linear-gradient(100deg, #9ff3ff 0%, #ffffff 30%, #d9c6ff 55%, #ff9bd8 80%, #ffd6ee 100%);
@@ -2246,10 +2253,10 @@ body[data-scene="final"] .atmos__light--e { --c: #0b1a5c; --x: 50vw;  --y: 50vh;
   height: 100%;
   object-fit: cover;
   object-position: var(--focus, 50% 50%);
-  transform: scale(1.06);
+  transform: scale(1.16);
   transition: transform 2s var(--ease-out) .2s;
 }
-.is-lit .honor__frame img { transform: none; }
+.is-lit .honor__frame img { transform: scale(1.08); }
 .honor__frame--ph { cursor: default; }
 .honor__duo .honor__frame {
   max-width: calc(82vh * var(--ratio, .8));
@@ -2416,10 +2423,12 @@ body[data-scene="final"] .atmos__light--e { --c: #0b1a5c; --x: 50vw;  --y: 50vh;
   display: grid;
   place-items: center;
   text-align: center;
-  overflow: visible;
-  overflow-x: clip;
+  overflow: hidden;
   padding-top: clamp(7rem, 18vh, 11rem);
   padding-bottom: clamp(5rem, 13vh, 8rem);
+}
+@supports (overflow: clip) {
+  .finale { overflow: visible; overflow-x: clip; }
 }
 .finale__dawn {
   position: absolute;
@@ -2688,7 +2697,602 @@ body[data-scene="final"] .atmos__light--e { --c: #0b1a5c; --x: 50vw;  --y: 50vh;
   cursor: pointer;
 }
 
-/* 16. Movimento reduzido e impressão ------------------------------------- */
+/* 16. Camada de animações ------------------------------------------------
+   16.1 Nome do aniversariante · 16.2 Faixas em movimento · 16.3 Em números
+   16.4 Números-fantasma e títulos com máscara · 16.5 Topbar de vidro
+   16.6 Cortina cinematográfica · 16.7 Cursor de luz · 16.8 Galeria viva
+   16.9 Película · 16.10 Homenagem · 16.11 Final e fogos
+   ------------------------------------------------------------------------ */
+
+/* 16.1 — "Felipe" pousado na linha do horizonte do 17, escrito por uma
+   caneta de luz durante a abertura. */
+.seventeen__name {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  z-index: 4;
+  translate: calc(-50% + var(--mx, 0) * 12px) calc(-40% + var(--my, 0) * 6px);
+  font-family: var(--f-display);
+  font-style: italic;
+  font-weight: 500;
+  font-variation-settings: "opsz" 96;
+  font-size: .36em;
+  line-height: 1.05;
+  letter-spacing: -.012em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.seventeen__name-clip { position: relative; display: block; padding: 0 .14em; }
+.seventeen__name-halo {
+  position: absolute;
+  inset: 0;
+  padding: inherit;
+  color: rgb(3 4 11 / .82);
+  filter: blur(.08em);
+}
+.seventeen__name-text {
+  position: relative;
+  display: block;
+  background: linear-gradient(100deg, #ffffff 0%, #f6efff 26%, #ffd9f0 50%, #ffffff 68%, #e3f6ff 84%, #ffffff 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.seventeen__pen {
+  position: absolute;
+  left: 0;
+  top: 58%;
+  width: .13em;
+  height: .13em;
+  margin: -.065em 0 0 -.065em;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 0 30%, rgb(var(--cyan-rgb) / .8) 55%, transparent 72%);
+  box-shadow: 0 0 .25em .08em rgb(var(--violet-rgb) / .75), 0 0 .7em .25em rgb(var(--cyan-rgb) / .3);
+  opacity: 0;
+}
+.intro-play .seventeen__name-clip { animation: intro-write 1.5s var(--ease-inout) 5.25s both; }
+.intro-play .seventeen__pen { animation: intro-pen 1.5s var(--ease-inout) 5.25s both; }
+.intro-done .seventeen__name-text { animation: name-drift 11s linear infinite; }
+@keyframes intro-write {
+  from { clip-path: inset(-30% 100% -30% -10%); }
+  to { clip-path: inset(-30% -10% -30% -10%); }
+}
+@keyframes intro-pen {
+  0% { left: 4%; opacity: 0; }
+  10%, 86% { opacity: 1; }
+  100% { left: 96%; opacity: 0; }
+}
+@keyframes name-drift { to { background-position: -200% 0; } }
+
+/* Profundidade: o título inclina levemente e as camadas se separam. */
+.opening__title {
+  transform: perspective(1400px) rotateX(calc(var(--my) * -3deg)) rotateY(calc(var(--mx) * 4deg));
+}
+.seventeen__glow { translate: calc(var(--mx) * -10px) calc(var(--my) * -7px); }
+.seventeen__ghost--c { translate: calc(var(--mx) * -6px) 0; }
+.seventeen__ghost--m { translate: calc(var(--mx) * 6px) 0; }
+
+/* 16.2 — Faixas em movimento */
+/* O invólucro corta as pontas da faixa inclinada: nada vaza para os lados
+   (no celular, qualquer sobra lateral faria a página "encolher"). */
+.marquee {
+  --fill: var(--g-chroma-text);
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  padding: clamp(1.6rem, 4vw, 3.2rem) 0;
+  margin: clamp(.25rem, 2vh, 1.5rem) 0;
+}
+.marquee__band {
+  margin: 0 -6vw;
+  padding: clamp(.75rem, 1.6vw, 1.25rem) 0;
+  overflow: hidden;
+  rotate: -2.2deg;
+  background: linear-gradient(90deg, rgb(7 9 28 / .88), rgb(16 10 42 / .88) 50%, rgb(7 9 28 / .88));
+  border-block: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent, rgb(var(--cyan-rgb) / .7) 25%, rgb(var(--violet-rgb) / .7) 50%, rgb(var(--magenta-rgb) / .7) 75%, transparent) 1;
+  box-shadow: 0 24px 60px -36px rgb(var(--violet-rgb) / .55);
+}
+.marquee--alt { --fill: var(--g-gold); }
+.marquee--alt .marquee__band {
+  rotate: 1.8deg;
+  border-image: linear-gradient(90deg, transparent, rgb(var(--gold-rgb) / .7) 30%, rgb(255 255 255 / .7) 50%, rgb(var(--lilac-rgb) / .7) 70%, transparent) 1;
+}
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee 42s linear infinite;
+}
+.marquee--alt .marquee__track { animation-direction: reverse; animation-duration: 46s; }
+.marquee.is-paused .marquee__track { animation-play-state: paused; }
+.marquee__group {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: clamp(1.1rem, 2.4vw, 2.4rem);
+  padding-right: clamp(1.1rem, 2.4vw, 2.4rem);
+  font-size: clamp(2.5rem, 6.6vw, 6rem);
+  font-weight: 800;
+  font-stretch: 70%;
+  line-height: 1.05;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.mq-fill {
+  background: var(--fill);
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.mq-line {
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(255 255 255 / .5);
+}
+.mq-star {
+  flex: none;
+  width: .42em;
+  height: .42em;
+  background: linear-gradient(135deg, #9ff3ff, #8b5cff 50%, #ff7fd0);
+  clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%);
+}
+.marquee--alt .mq-star { background: linear-gradient(135deg, #fffdf0, #f4e7a1 38%, #ffffff 64%, #e2d4ff); }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* 16.3 — 17 anos em números */
+.numbers {
+  position: relative;
+  z-index: 2;
+  max-width: var(--maxw-wide);
+  margin: 0 auto;
+  padding: clamp(3.5rem, 11vh, 7rem) var(--gutter) clamp(3rem, 9vh, 6rem);
+  text-align: center;
+}
+.numbers__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .7rem;
+  font-size: .66rem;
+  font-weight: 600;
+  font-stretch: 125%;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.numbers__title span {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-weight: 500;
+  font-variation-settings: "opsz" 72;
+  font-size: clamp(2.3rem, 5.2vw, 3.8rem);
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+  padding-right: .08em;
+  background: linear-gradient(100deg, #ffffff, #d9c6ff 45%, #9ff3ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.numbers__grid {
+  margin: clamp(2.4rem, 7vh, 4.2rem) 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.stat {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: .8rem;
+  padding: 1rem clamp(.4rem, 2vw, 1.6rem);
+}
+.stat + .stat::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12%;
+  bottom: 12%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgb(255 255 255 / .18), transparent);
+}
+.stat__label {
+  font-size: .64rem;
+  font-weight: 600;
+  font-stretch: 125%;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.stat__value {
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 1em;
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-variation-settings: "opsz" 96;
+  font-size: clamp(2.9rem, 7vw, 6.6rem);
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+.stat__value > span[aria-hidden] { display: flex; align-items: flex-start; }
+.stat__num {
+  background: var(--g-17);
+  background-size: 100% 100%, 100% 130%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.stat__plus {
+  margin: .14em .06em 0 0;
+  font-family: var(--f-sans);
+  font-weight: 300;
+  font-size: .42em;
+  color: var(--lilac);
+}
+.stat__unit {
+  align-self: flex-end;
+  margin: 0 0 .32em .28em;
+  font-family: var(--f-sans);
+  font-weight: 500;
+  font-stretch: 110%;
+  font-size: .24em;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.stat__infinity { width: 1.9em; height: .95em; overflow: visible; }
+.stat__infinity path {
+  fill: none;
+  stroke: url(#inf-grad);
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  filter: drop-shadow(0 0 6px rgb(var(--violet-rgb) / .55));
+  transition: stroke-dashoffset 2.8s var(--ease-cine) .5s;
+}
+.js .stat--infinite:not(.is-in) .stat__infinity path { stroke-dashoffset: 1; }
+@media (max-width: 47.99em) {
+  .numbers__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 1.4rem; }
+  .stat:nth-child(3)::before { display: none; }
+}
+
+/* 16.4 — Números-fantasma das cenas (parallax) e títulos com máscara */
+.scene-head { position: relative; }
+.ghost-no {
+  position: absolute;
+  z-index: -1;
+  top: -.34em;
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-variation-settings: "opsz" 96;
+  font-size: clamp(9rem, 25vw, 23rem);
+  line-height: 1;
+  letter-spacing: -.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(var(--lilac-rgb) / .16);
+  pointer-events: none;
+  user-select: none;
+  translate: 0 var(--py, 0px);
+  will-change: translate;
+}
+.ghost-no--right { right: -.03em; }
+.ghost-no--left { left: -.05em; }
+.ghost-no--center { left: 0; right: 0; text-align: center; top: -.42em; }
+.film-scene .ghost-no { -webkit-text-stroke-color: rgb(var(--azure-rgb) / .16); }
+.honor .ghost-no { -webkit-text-stroke-color: rgb(var(--pink-soft-rgb) / .14); }
+
+.js [data-reveal="mask"] {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  transition: none;
+  overflow: hidden;
+  padding: 0 .1em .14em;
+  margin-inline: -.1em;
+  margin-bottom: -.14em;
+}
+.mask__in {
+  display: inline-block;
+  transform: translateY(108%) rotate(2deg);
+  transform-origin: 0 100%;
+  transition: transform 1.35s var(--ease-out) var(--d, 0s);
+}
+.js [data-reveal="mask"].is-in .mask__in { transform: none; }
+
+/* 16.5 — Topbar de vidro ao rolar */
+.topbar.is-solid::before {
+  inset: 0;
+  background: rgb(5 7 20 / .58);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  backdrop-filter: blur(18px) saturate(150%);
+  border-bottom: 1px solid rgb(255 255 255 / .06);
+}
+
+/* 16.6 — Cortina cinematográfica (salto entre cenas) */
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+  pointer-events: none;
+  visibility: hidden;
+  overflow: hidden;
+}
+.curtain.is-active { visibility: visible; }
+.curtain__panel {
+  position: absolute;
+  inset: 0 -14vw;
+  background:
+    radial-gradient(60% 80% at 50% 50%, rgb(var(--violet-rgb) / .22), transparent 70%),
+    radial-gradient(90% 90% at 50% 120%, rgb(var(--cyan-rgb) / .12), transparent 70%),
+    #04050f;
+  transform: translateX(-125%) skewX(-8deg);
+}
+.curtain__panel::before,
+.curtain__panel::after {
+  content: "";
+  position: absolute;
+  top: -5%;
+  bottom: -5%;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--cyan), var(--violet), var(--magenta));
+  box-shadow: 0 0 30px 8px rgb(var(--violet-rgb) / .55), 0 0 90px 24px rgb(var(--cyan-rgb) / .2);
+}
+.curtain__panel::before { left: 0; }
+.curtain__panel::after { right: 0; }
+.curtain.is-in .curtain__panel { transform: translateX(0) skewX(-8deg); transition: transform .56s var(--ease-cine); }
+.curtain.is-out .curtain__panel { transform: translateX(125%) skewX(-8deg); transition: transform .62s var(--ease-cine); }
+.curtain__card {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: .8rem;
+  opacity: 0;
+  transform: translateY(14px);
+}
+.curtain.is-in .curtain__card { opacity: 1; transform: none; transition: opacity .32s ease .2s, transform .6s var(--ease-out) .2s; }
+.curtain.is-out .curtain__card { opacity: 0; transition: opacity .18s ease; }
+.curtain__no {
+  font-size: .68rem;
+  font-weight: 600;
+  font-stretch: 125%;
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.curtain__name {
+  padding-right: .1em;
+  font-family: var(--f-display);
+  font-style: italic;
+  font-weight: 500;
+  font-variation-settings: "opsz" 96;
+  font-size: clamp(2.8rem, 8vw, 6rem);
+  line-height: 1;
+  background: var(--g-amp);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* 16.7 — Luz que acompanha o cursor e anel sobre fotos/vídeos (mouse) */
+.cursor-glow,
+.cursor-ring { display: none; }
+.has-cursor .cursor-glow {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 560px;
+  height: 560px;
+  margin: -280px 0 0 -280px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(closest-side, rgb(var(--violet-rgb) / .15), rgb(var(--cyan-rgb) / .05) 55%, transparent);
+  opacity: 0;
+  transition: opacity .7s var(--ease-out);
+  will-change: transform;
+}
+.has-cursor .cursor-glow.is-on { opacity: 1; }
+.has-cursor .cursor-ring {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 96;
+  width: 84px;
+  height: 84px;
+  margin: -42px 0 0 -42px;
+  border-radius: 50%;
+  pointer-events: none;
+  border: 1px solid rgb(255 255 255 / .7);
+  background: rgb(6 8 22 / .3);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 0 30px rgb(var(--violet-rgb) / .45);
+  color: #ffffff;
+  font-size: .56rem;
+  font-weight: 700;
+  font-stretch: 118%;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  transform: translate3d(var(--rx, -200px), var(--ry, -200px), 0) scale(.3);
+  opacity: 0;
+  transition: opacity .3s var(--ease-out), scale .3s;
+}
+.has-cursor .cursor-ring.is-on { opacity: 1; transform: translate3d(var(--rx, -200px), var(--ry, -200px), 0) scale(1); transition: opacity .3s var(--ease-out); }
+.cursor-ring__label { padding-left: .22em; }
+.has-cursor.ring-on:not(.motion-reduced) :is(button.shot__frame, button.honor__frame, button.clip, .feature__screen:not(.is-empty)) { cursor: none; }
+
+/* Botões magnéticos: se aproximam levemente do ponteiro */
+.has-cursor :is(.btn, .round-btn, .play, .continue, .icon-btn, .menu-btn, .skip-intro) {
+  transition-property: transform, translate, box-shadow, border-color, color, background-color, opacity;
+  transition-duration: .5s;
+  transition-timing-function: var(--ease-out);
+}
+
+/* 16.8 — Galeria viva: inclinação 3D, brilho que segue o ponteiro */
+.shot__frame,
+.honor__frame { transition: box-shadow 1.2s var(--ease-out), transform .7s var(--ease-out); }
+.shot__frame.is-tilting,
+.honor__frame.is-tilting { transition: box-shadow 1.2s var(--ease-out), transform .12s linear; }
+.frame-glare {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgb(255 255 255 / .16), transparent 46%);
+  opacity: 0;
+  transition: opacity .4s var(--ease-out);
+}
+.is-tilting .frame-glare { opacity: 1; }
+.honor__frame img { translate: 0 var(--ip, 0px); }
+
+/* Espaços reservados mais vivos: aurora lenta no tom de cada moldura */
+.ph__aurora {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.ph__aurora::before,
+.ph__aurora::after {
+  content: "";
+  position: absolute;
+  width: 75%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(var(--ph-rgb) / .3), transparent);
+  animation: ph-float 13s var(--ease-inout) infinite alternate;
+}
+.ph__aurora::before { left: -20%; top: -30%; }
+.ph__aurora::after {
+  right: -25%;
+  bottom: -35%;
+  background: radial-gradient(closest-side, rgb(var(--cyan-rgb) / .14), transparent);
+  animation-duration: 17s;
+  animation-direction: alternate-reverse;
+}
+.ph__icon { animation: ph-breathe 3.6s var(--ease-inout) infinite alternate; }
+@keyframes ph-float { to { transform: translate(28%, 22%) scale(1.15); } }
+@media (hover: none) {
+  .ph__aurora::after,
+  .ph::after { display: none; }
+  .ph__aurora::before { animation: none; }
+}
+@keyframes ph-breathe { from { opacity: .55; transform: scale(.94); } to { opacity: .95; transform: scale(1.04); } }
+
+/* 16.9 — Película: perfurações acompanham a rolagem dos cartões */
+.reel__strip {
+  position: relative;
+  margin: 0 calc(var(--gutter) * -1);
+  padding: 1rem 0 .4rem;
+}
+.reel__strip::before,
+.reel__strip::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 9px;
+  background: repeating-linear-gradient(90deg, transparent 0 12px, rgb(255 255 255 / .1) 12px 24px, transparent 24px 36px);
+  background-position: var(--strip-x, 0px) 0;
+  border-radius: 2px;
+  pointer-events: none;
+}
+.reel__strip::before { top: 0; }
+.reel__strip::after { bottom: 0; }
+
+/* 16.10 — Homenagem: brilho que percorre os nomes, refletores que balançam */
+.honor__ln { position: relative; }
+.honor__ln::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-right: inherit;
+  background: linear-gradient(100deg, transparent 42%, rgb(255 255 255 / .82) 50%, transparent 58%);
+  background-size: 260% 100%;
+  background-position: 150% 0;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  pointer-events: none;
+}
+.honor__credits.is-lit .honor__ln::after { animation: name-shine 7.5s var(--ease-inout) calc(2.8s + var(--d, 0s)) infinite; }
+.honor__credits.is-lit .honor__amp { animation: amp-glow 4.6s var(--ease-inout) 2.6s infinite alternate; }
+.honor.is-on .spot--a { animation: sway-a 11s var(--ease-inout) 2.6s infinite alternate; }
+.honor.is-on .spot--b { animation: sway-b 12.5s var(--ease-inout) 2.6s infinite alternate; }
+@keyframes name-shine {
+  0%, 72% { background-position: 150% 0; }
+  100% { background-position: -50% 0; }
+}
+@keyframes amp-glow {
+  from { filter: drop-shadow(0 0 0 rgb(var(--violet-rgb) / 0)); }
+  to { filter: drop-shadow(0 0 .1em rgb(var(--violet-rgb) / .8)); }
+}
+@keyframes sway-a { to { transform: rotate(-5deg); } }
+@keyframes sway-b { to { transform: rotate(5deg); } }
+
+/* 16.11 — Final: dedicatória, fogos de luz, fotos flutuando */
+.finale__fireworks {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  visibility: hidden;
+}
+.finale__dedication {
+  margin-top: 1.5rem;
+  font-family: var(--f-display);
+  font-style: italic;
+  font-weight: 500;
+  font-variation-settings: "opsz" 14;
+  font-size: clamp(1.45rem, 3.2vw, 2.5rem);
+  line-height: 1.2;
+  color: var(--text);
+}
+.finale__dedication span {
+  padding-right: .06em;
+  background: var(--g-gold);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gold-drift 9s linear infinite;
+}
+.finale__title { margin-top: .9rem; }
+.js .finale__dedication {
+  --d: .45s;
+  transition: opacity 1.6s var(--ease-out) var(--d), transform 1.8s var(--ease-out) var(--d), filter 1.6s var(--ease-out) var(--d);
+}
+.js .finale:not(.is-lit) .finale__dedication { opacity: 0; transform: translateY(1rem); filter: blur(6px); }
+.js .finale__years { --d: .9s; }
+.js .finale__line { --d: 1.7s; }
+.finale__dedication.is-glowing span { filter: drop-shadow(0 0 .3em rgb(var(--gold-rgb) / .8)); transition: filter .4s; }
+.fphoto img { animation: float-y 7s var(--ease-inout) infinite alternate; }
+.fphoto--2 img { animation-duration: 8.5s; animation-delay: -2s; }
+.fphoto--3 img { animation-duration: 6.4s; animation-delay: -1s; }
+.fphoto--4 img { animation-duration: 9s; animation-delay: -3s; }
+@keyframes float-y {
+  from { transform: translateY(-7px) rotate(-.4deg); }
+  to { transform: translateY(7px) rotate(.4deg); }
+}
+
+/* 17. Movimento reduzido e impressão ------------------------------------- */
 .motion-reduced *,
 .motion-reduced *::before,
 .motion-reduced *::after {

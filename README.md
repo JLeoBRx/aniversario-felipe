@@ -1,6 +1,7 @@
 # CHROMA MEMORIES 17
 
-Uma experiência cinematográfica para **Pedro Henrique & Vitor Luis — OS MELHORES!**
+Uma experiência cinematográfica para os **17 anos do Felipe**, com
+**Pedro Henrique & Victor Luis — OS MELHORES!** em destaque.
 
 Site em HTML5, CSS3 e JavaScript puro: sem frameworks, sem instalação e sem
 etapa de compilação. Funciona abrindo o `index.html` direto no computador ou
@@ -12,14 +13,30 @@ publicado em qualquer hospedagem de site estático.
 
 | Cena | O que acontece |
 | --- | --- |
-| **01 · Abertura** | Escuro azul-marinho, luzes nas bordas, um campo magenta atravessando a tela e brilho ciano ao fundo. O **17** nasce no centro com desfoque e aberração cromática, a câmera recua e surgem *17 anos. Mil cores. Infinitas memórias.*, a frase de abertura, os nomes e a assinatura *Os melhores!*. Há o botão **Pular abertura**, e a tecla Esc ou a rolagem também aceleram o final. |
-| **02 · Memórias** | Uma exposição de fotografias em composição assimétrica, que se organiza sozinha conforme as fotos sejam verticais, horizontais, quadradas ou panorâmicas. Cada foto surge do escuro, revelada por um feixe de luz. Ao tocar, abre a visualização ampliada com setas, teclado e gesto de deslizar. |
-| **03 · O filme** | Um vídeo principal com capa ampla e botão de play, seguido de uma sequência de cartões horizontais e verticais. Os vídeos abrem numa “sala de projeção” e só tocam com o clique. Ao fechar, o vídeo para e o arquivo é liberado da memória. |
-| **04 · Os melhores** | Refletores ciano e magenta acendem. Um feixe de luz atravessa a foto dos dois juntos e segue até os nomes, que se iluminam linha a linha, e em seguida aparece a frase da homenagem. |
-| **05 · Final** | O 17 volta, desenhado em luz, sobre um amanhecer cromático. Surgem *17 anos. E a história está só começando.*, a frase final e *Pedro Henrique & Vitor Luis — Os melhores!*, com os botões **Voltar ao início** e **Rever a abertura**. |
+| **01 · Abertura** | Escuro azul-marinho, luzes nas bordas, um campo magenta atravessando a tela e brilho ciano ao fundo. O **17** nasce no centro com desfoque e aberração cromática, a câmera recua e o nome **Felipe** é escrito em luz sobre a linha do horizonte do 17. Depois surgem *17 anos. Mil cores. Infinitas memórias.*, a frase de abertura, os nomes e a assinatura *Os melhores!*. No computador, as luzes e o 17 acompanham o mouse com um leve efeito de profundidade. Há o botão **Pular abertura**, e a tecla Esc ou a rolagem também aceleram o final. |
+| *Entre 01 e 02* | Uma faixa inclinada de letreiro (*Felipe · 17 anos · Mil cores · Infinitas memórias*) que acelera e muda de sentido conforme a rolagem, e o painel **17 anos em números**, com contagem animada (17 anos, mais de 6.200 dias, mais de 149 mil horas e memórias infinitas, com o ∞ desenhado em luz). |
+| **02 · Memórias** | Uma exposição de fotografias em composição assimétrica, que se organiza sozinha conforme as fotos sejam verticais, horizontais, quadradas ou panorâmicas. Cada foto surge do escuro, revelada por um feixe de luz. No computador, a foto inclina na direção do mouse com um reflexo de vidro. Ao tocar, abre a visualização ampliada com setas, teclado e gesto de deslizar. |
+| **03 · O filme** | Um vídeo principal com capa ampla e botão de play, seguido de uma película de cartões horizontais e verticais. Os vídeos abrem numa “sala de projeção” e só tocam com o clique. Ao fechar, o vídeo para e o arquivo é liberado da memória. |
+| **04 · Os melhores** | Refletores ciano e magenta acendem. Um feixe de luz atravessa a foto dos dois juntos e segue até os nomes, que se iluminam linha a linha com um brilho que percorre as letras, e em seguida aparece a frase da homenagem. Logo depois passa uma segunda faixa de letreiro: *Parabéns, Felipe · Pedro Henrique · Victor Luis · Os melhores*. |
+| **05 · Final** | O 17 volta, desenhado em luz, sobre um amanhecer cromático, e fogos de luz estouram no céu. Surgem *17 anos. E a história está só começando.*, a frase final, a dedicatória *Feliz aniversário, Felipe!* e *Pedro Henrique & Victor Luis — Os melhores!*, com os botões **Voltar ao início**, **Celebrar** (solta mais fogos) e **Rever a abertura**. |
 
 A atmosfera de luz muda de cor de forma gradual a cada cena, e um fio de luz
 liga uma cena à seguinte.
+
+### Detalhes de movimento
+
+- **Cortina de cena:** ao navegar pelo menu, pelo topo ou pelo botão *Voltar ao
+  início*, uma cortina de luz cobre a tela, mostra o número e o nome da cena e
+  se abre já no destino.
+- **Títulos** sobem de dentro de uma máscara e **números gigantes vazados**
+  (02, 03, 04) flutuam ao fundo com parallax.
+- **Estrelas cadentes** cruzam o céu de partículas de vez em quando.
+- **Com mouse ou trackpad:** uma luz suave segue o cursor; sobre fotos e
+  vídeos aparece um anel com *Ampliar* ou *Assistir*; os botões são
+  “magnéticos” e se aproximam do cursor. Em telas de toque esses efeitos
+  ficam desligados, para poupar bateria.
+- As fotos se deslocam levemente dentro da moldura durante a rolagem, sem
+  nunca alterar suas cores.
 
 ---
 
@@ -130,7 +147,7 @@ No `config.js`:
 homenagem: {
   juntos:        "assets/fotos/os-melhores/juntos.jpg",          // ponto central da cena
   pedroHenrique: "assets/fotos/os-melhores/pedro-henrique.jpg",  // opcional
-  vitorLuis:     "assets/fotos/os-melhores/vitor-luis.jpg"       // opcional
+  victorLuis:    "assets/fotos/os-melhores/victor-luis.jpg"      // opcional
 },
 encerramento: {
   fotos: [ "assets/fotos/foto-07.jpg" ]  // até 4; vazio = usa as fotos com destaque: true
@@ -138,7 +155,8 @@ encerramento: {
 ```
 
 Se a foto dos dois juntos for horizontal, a cena muda sozinha para um plano
-aberto, com a foto em cima e os nomes embaixo.
+aberto, com a foto em cima e os nomes embaixo. (A grafia antiga da chave,
+`vitorLuis`, continua aceita.)
 
 ---
 
@@ -178,30 +196,38 @@ estáticos. Não há nada para instalar nem compilar.
 | O quê | Onde |
 | --- | --- |
 | Textos das cenas | `index.html`, onde cada cena está marcada com um comentário `CENA 0X` |
+| Frases das faixas de letreiro | `index.html`, blocos `marquee` (as duas cópias de cada frase precisam ser iguais) |
 | Cores, luzes e degradês | `css/chroma.css`, seção **02. Tokens** e paletas de luz por cena |
 | Ritmo da abertura | Linha do tempo em `css/chroma.css` (seção 07) e `TOTAL` em `js/intro.js` |
-| Partículas | Paletas e quantidade em `js/particles.js` |
+| Camada de animações (nome, letreiros, números, cortina, cursor) | `css/chroma.css`, seção **16**, e `js/effects.js` |
+| Partículas e estrelas cadentes | Paletas e quantidade em `js/particles.js` |
+| Fogos de luz | Cores e quantidade de faíscas em `js/fireworks.js` |
 
 **Regra de cor do projeto:** nenhum laranja nem tom alaranjado, inclusive nas
-cores intermediárias dos degradês. Vermelhos ficam no rubi e carmim, amarelos
-e dourados no limão e champanhe, e vermelho/rosa nunca encostam em
-amarelo/dourado dentro de um mesmo degradê.
+cores intermediárias dos degradês, nas partículas e nos fogos. Vermelhos ficam
+no rubi e carmim, amarelos e dourados no limão e champanhe, e vermelho/rosa
+nunca encostam em amarelo/dourado dentro de um mesmo degradê.
 
 ---
 
 ## 8. Acessibilidade e conforto
 
 - A preferência do sistema por **movimento reduzido** é respeitada. Nesse modo
-  a abertura aparece pronta, sem animações longas, partículas em movimento ou
-  parallax.
+  a abertura aparece pronta e não há animações longas, partículas em movimento,
+  parallax, letreiros correndo, cortina de cena, efeitos de cursor ou fogos
+  (o botão **Celebrar** faz só um brilho suave na dedicatória). Os números já
+  aparecem com o valor final.
 - O botão **Reduzir movimento** no topo (e no menu do celular) liga e desliga
   as animações, e a escolha fica guardada no navegador.
 - Tudo funciona pelo teclado: Tab navega; Esc pula a abertura e fecha menus,
   fotos e vídeos; ← → Home End navegam na galeria ampliada. Ao fechar, o foco
   volta para onde estava.
 - Botões e imagens têm nomes acessíveis. Use o campo `descricao` para
-  descrever as fotos.
+  descrever as fotos. Letreiros e números decorativos ficam escondidos dos
+  leitores de tela, que recebem os valores em texto (por exemplo, “mais de
+  6.200 dias”).
 - Não há áudio automático em nenhum momento.
+- Animações que estão fora da tela ficam pausadas, para poupar bateria.
 
 ---
 
@@ -210,14 +236,16 @@ amarelo/dourado dentro de um mesmo degradê.
 ```
 index.html            estrutura das cinco cenas
 config.js             ← fotos e vídeos (o único arquivo que você precisa editar)
-css/chroma.css        direção de arte: paleta, luzes, tipografia, cenas
+css/chroma.css        direção de arte: paleta, luzes, tipografia, cenas e animações
 js/core.js            utilidades, configuração, cenas, navegação, diálogos
 js/intro.js           abertura cinematográfica
-js/particles.js       partículas de luz
+js/particles.js       partículas de luz e estrelas cadentes
 js/gallery.js         exposição de fotografias
 js/lightbox.js        visualização ampliada
 js/videos.js          filme principal, cartões e sala de projeção
 js/honor.js           homenagem e encerramento
+js/fireworks.js       fogos de luz do encerramento
+js/effects.js         letreiros, contagem, cortina, cursor, botões magnéticos e inclinação
 assets/fonts/         Bodoni Moda e Archivo (licença SIL OFL 1.1)
 assets/img/           ícone e imagem de compartilhamento
 assets/fotos/         suas fotografias
@@ -228,5 +256,5 @@ assets/videos/        seus vídeos (e capas/)
 
 - Tipografia: **Bodoni Moda** (Indestructible Type) e **Archivo** (Omnibus-Type),
   ambas sob a SIL Open Font License 1.1. As licenças estão em `assets/fonts/`.
-- Todo o restante (luzes, partículas, ícones e composições) foi feito em
+- Todo o restante (luzes, partículas, fogos, ícones e composições) foi feito em
   HTML, CSS e JavaScript, sem bibliotecas externas.

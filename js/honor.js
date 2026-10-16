@@ -30,7 +30,7 @@
 
     var SLOTS = {
       juntos: {
-        photo: cfg.honor.duo, label: 'Pedro Henrique & Vitor Luis', caption: null,
+        photo: cfg.honor.duo, label: 'Pedro Henrique & Victor Luis', caption: null,
         title: 'Fotografia dos dois juntos', hint: 'assets/fotos/os-melhores/juntos.jpg',
         glow: 'var(--violet-rgb)', ratio: 4 / 5, limits: [0.7, 1.9]
       },
@@ -39,9 +39,9 @@
         title: 'Retrato', hint: 'assets/fotos/os-melhores/pedro-henrique.jpg',
         glow: 'var(--cyan-rgb)', ratio: 3 / 4, limits: [0.66, 1.05]
       },
-      vitorLuis: {
-        photo: cfg.honor.vitor, label: 'Vitor Luis', caption: 'Vitor Luis',
-        title: 'Retrato', hint: 'assets/fotos/os-melhores/vitor-luis.jpg',
+      victorLuis: {
+        photo: cfg.honor.victor, label: 'Victor Luis', caption: 'Victor Luis',
+        title: 'Retrato', hint: 'assets/fotos/os-melhores/victor-luis.jpg',
         glow: 'var(--magenta-rgb)', ratio: 3 / 4, limits: [0.66, 1.05]
       }
     };
@@ -115,7 +115,7 @@
     });
     /* Ordem da visualização ampliada: os dois juntos primeiro. */
     gallery.sort(function (a, b) {
-      var order = ['Pedro Henrique & Vitor Luis', 'Pedro Henrique', 'Vitor Luis'];
+      var order = ['Pedro Henrique & Victor Luis', 'Pedro Henrique', 'Victor Luis'];
       return order.indexOf(a.caption) - order.indexOf(b.caption);
     });
     layout();
@@ -180,6 +180,8 @@
       finale.classList.add('is-lit');
       var slate = finale.querySelector('.slate');
       if (slate) slate.classList.add('is-in');
+      /* Fogos de luz quando a dedicatória aparece. */
+      setTimeout(function () { if (C.fireworks) C.fireworks.celebrate(3); }, 1300);
     }, { margin: '0px 0px -30% 0px' });
   }
 

@@ -114,8 +114,8 @@
     var loop = function () {
       cx += (tx - cx) * 0.06;
       cy += (ty - cy) * 0.06;
-      lights.style.setProperty('--mx', cx.toFixed(3));
-      lights.style.setProperty('--my', cy.toFixed(3));
+      hero.style.setProperty('--mx', cx.toFixed(3));
+      hero.style.setProperty('--my', cy.toFixed(3));
       if (Math.abs(tx - cx) > 0.002 || Math.abs(ty - cy) > 0.002) C.raf(loop);
       else looping = false;
     };

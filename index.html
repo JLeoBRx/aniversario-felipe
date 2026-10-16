@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>CHROMA MEMORIES 17 · Pedro Henrique &amp; Vitor Luis — Os melhores!</title>
-  <meta name="description" content="17 anos. Mil cores. Infinitas memórias. Uma celebração de momentos que merecem ser lembrados para sempre. Pedro Henrique &amp; Vitor Luis — os melhores!">
+  <title>Felipe 17 · CHROMA MEMORIES — Pedro Henrique &amp; Victor Luis, os melhores!</title>
+  <meta name="description" content="Felipe, 17 anos. Mil cores. Infinitas memórias. Uma celebração de momentos que merecem ser lembrados para sempre — Pedro Henrique &amp; Victor Luis, os melhores!">
   <meta name="theme-color" content="#04050f">
   <meta name="color-scheme" content="dark">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:title" content="CHROMA MEMORIES 17">
-  <meta property="og:description" content="17 anos. Mil cores. Infinitas memórias. Pedro Henrique &amp; Vitor Luis — os melhores!">
+  <meta property="og:title" content="Felipe · 17 anos — CHROMA MEMORIES">
+  <meta property="og:description" content="17 anos. Mil cores. Infinitas memórias. Pedro Henrique &amp; Victor Luis — os melhores!">
   <!-- Para a pré-visualização em redes sociais, troque pelo endereço completo
        do site publicado (ex.: https://seu-usuario.github.io/aniversario-felipe/assets/img/compartilhar.jpg) -->
   <meta property="og:image" content="assets/img/compartilhar.jpg">
@@ -47,6 +47,8 @@
   <script src="js/gallery.js" defer></script>
   <script src="js/videos.js" defer></script>
   <script src="js/honor.js" defer></script>
+  <script src="js/fireworks.js" defer></script>
+  <script src="js/effects.js" defer></script>
 </head>
 <body data-scene="abertura">
 
@@ -61,6 +63,7 @@
     <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 6v12M6 12h12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
     <symbol id="i-replay" viewBox="0 0 24 24"><path d="M5 12a7 7 0 1 0 2.1-5M5 4.5V9h4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-motion" viewBox="0 0 24 24"><path d="M3 12c2.2-3.5 4.4-3.5 6.6 0s4.4 3.5 6.6 0 3.4-3 4.8-1.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".45"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2.5c.6 4.6 2.9 6.9 7.5 7.5-4.6.6-6.9 2.9-7.5 7.5-.6-4.6-2.9-6.9-7.5-7.5 4.6-.6 6.9-2.9 7.5-7.5z" fill="currentColor"/><path d="M19 15.5c.25 1.7 1.05 2.5 2.75 2.75-1.7.25-2.5 1.05-2.75 2.75-.25-1.7-1.05-2.5-2.75-2.75 1.7-.25 2.5-1.05 2.75-2.75z" fill="currentColor" opacity=".7"/></symbol>
     <symbol id="i-photo" viewBox="0 0 48 48"><rect x="7" y="11" width="34" height="26" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="24" cy="24" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M15 11l2.5-4h13L33 11" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
     <symbol id="i-film" viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="28" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 10v28M36 10v28M6 17h6M6 24h6M6 31h6M36 17h6M36 24h6M36 31h6" stroke="currentColor" stroke-width="1.2"/><path d="M21 19.5v9l7.5-4.5z" fill="currentColor"/></symbol>
   </svg>
@@ -78,22 +81,30 @@
   </div>
   <div class="vignette" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"><span class="cursor-ring__label"></span></div>
   <div class="letterbox" aria-hidden="true"><span></span><span></span></div>
+
+  <!-- Cortina cinematográfica usada ao saltar entre cenas pelo menu -->
+  <div class="curtain" aria-hidden="true" data-curtain>
+    <div class="curtain__panel"></div>
+    <p class="curtain__card"><span class="curtain__no"></span><span class="curtain__name"></span></p>
+  </div>
 
   <!-- ===== Navegação ===== -->
   <header class="topbar" data-topbar>
-    <a class="brand" href="#abertura">
+    <a class="brand" href="#abertura" data-jump>
       <span class="brand__mark" aria-hidden="true">17</span>
-      <span class="brand__name">Chroma Memories<span class="sr-only"> 17 — voltar à abertura</span></span>
+      <span class="brand__name">Chroma Memories<span class="sr-only"> — Felipe, 17 anos. Voltar à abertura</span></span>
     </a>
 
     <nav class="nav" aria-label="Cenas da experiência">
       <ol class="nav__list">
-        <li><a class="nav__link" href="#abertura" data-nav="abertura"><span class="nav__no" aria-hidden="true">01</span>Abertura</a></li>
-        <li><a class="nav__link" href="#memorias" data-nav="memorias"><span class="nav__no" aria-hidden="true">02</span>Memórias</a></li>
-        <li><a class="nav__link" href="#filme" data-nav="filme"><span class="nav__no" aria-hidden="true">03</span>O filme</a></li>
-        <li><a class="nav__link" href="#os-melhores" data-nav="melhores"><span class="nav__no" aria-hidden="true">04</span>Os melhores</a></li>
-        <li><a class="nav__link" href="#final" data-nav="final"><span class="nav__no" aria-hidden="true">05</span>Final</a></li>
+        <li><a class="nav__link" href="#abertura" data-nav="abertura" data-jump><span class="nav__no" aria-hidden="true">01</span>Abertura</a></li>
+        <li><a class="nav__link" href="#memorias" data-nav="memorias" data-jump><span class="nav__no" aria-hidden="true">02</span>Memórias</a></li>
+        <li><a class="nav__link" href="#filme" data-nav="filme" data-jump><span class="nav__no" aria-hidden="true">03</span>O filme</a></li>
+        <li><a class="nav__link" href="#os-melhores" data-nav="melhores" data-jump><span class="nav__no" aria-hidden="true">04</span>Os melhores</a></li>
+        <li><a class="nav__link" href="#final" data-nav="final" data-jump><span class="nav__no" aria-hidden="true">05</span>Final</a></li>
       </ol>
     </nav>
 
@@ -134,7 +145,7 @@
           <svg class="icon" aria-hidden="true"><use href="#i-motion"/></svg>
           <span data-motion-label>Reduzir movimento</span>
         </button>
-        <p class="menu__sign">Pedro Henrique &amp; Vitor Luis — Os melhores!</p>
+        <p class="menu__sign">Felipe, 17 anos · Pedro Henrique &amp; Victor Luis — Os melhores!</p>
       </div>
     </div>
   </dialog>
@@ -157,7 +168,7 @@
 
       <div class="opening__stage">
         <h1 class="opening__title" id="titulo-abertura">
-          <span class="sr-only">Chroma Memories 17</span>
+          <span class="sr-only">Felipe, 17 anos</span>
           <span class="seventeen" data-seventeen aria-hidden="true">
             <span class="seventeen__inner">
               <span class="seventeen__glow">17</span>
@@ -168,6 +179,7 @@
             </span>
             <span class="seventeen__horizon"></span>
             <span class="seventeen__reflection">17</span>
+            <span class="seventeen__name"><span class="seventeen__name-clip"><span class="seventeen__name-halo">Felipe</span><span class="seventeen__name-text">Felipe</span></span><span class="seventeen__pen"></span></span>
           </span>
         </h1>
 
@@ -181,7 +193,7 @@
 
         <div class="opening__credit">
           <span class="opening__beamline" aria-hidden="true"></span>
-          <p class="duo-names"><span class="duo-names__one">Pedro Henrique</span> <span class="amp">&amp;</span> <span class="duo-names__two">Vitor Luis</span></p>
+          <p class="duo-names"><span class="duo-names__one">Pedro Henrique</span> <span class="amp">&amp;</span> <span class="duo-names__two">Victor Luis</span></p>
           <p class="signature"><span class="signature__line" aria-hidden="true"></span><span class="signature__text">Os melhores!</span><span class="signature__line" aria-hidden="true"></span></p>
         </div>
 
@@ -197,6 +209,51 @@
       </button>
     </section>
 
+    <!-- Faixa em movimento (acelera com a rolagem e inverte ao rolar para cima) -->
+    <div class="marquee" aria-hidden="true" data-marquee>
+      <div class="marquee__band">
+        <div class="marquee__track">
+          <span class="marquee__group"><span class="mq-fill">Felipe</span><span class="mq-star"></span><span class="mq-line">17 anos</span><span class="mq-star"></span><span class="mq-fill">Mil cores</span><span class="mq-star"></span><span class="mq-line">Infinitas memórias</span><span class="mq-star"></span></span>
+          <span class="marquee__group"><span class="mq-fill">Felipe</span><span class="mq-star"></span><span class="mq-line">17 anos</span><span class="mq-star"></span><span class="mq-fill">Mil cores</span><span class="mq-star"></span><span class="mq-line">Infinitas memórias</span><span class="mq-star"></span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interlúdio: 17 anos em números (contagem animada) -->
+    <section class="numbers" aria-labelledby="titulo-numeros" data-numbers>
+      <h2 class="numbers__title" id="titulo-numeros" data-reveal><span>Felipe</span> 17 anos em números</h2>
+      <dl class="numbers__grid">
+        <div class="stat" data-reveal style="--d: .05s">
+          <dt class="stat__label">anos</dt>
+          <dd class="stat__value"><span class="stat__num" data-count="17" aria-hidden="true">17</span><span class="sr-only">17</span></dd>
+        </div>
+        <div class="stat" data-reveal style="--d: .15s">
+          <dt class="stat__label">dias</dt>
+          <dd class="stat__value"><span aria-hidden="true"><span class="stat__plus">+</span><span class="stat__num" data-count="6200">6.200</span></span><span class="sr-only">mais de 6.200</span></dd>
+        </div>
+        <div class="stat" data-reveal style="--d: .25s">
+          <dt class="stat__label">horas</dt>
+          <dd class="stat__value"><span aria-hidden="true"><span class="stat__plus">+</span><span class="stat__num" data-count="149">149</span><span class="stat__unit">mil</span></span><span class="sr-only">mais de 149 mil</span></dd>
+        </div>
+        <div class="stat stat--infinite" data-reveal style="--d: .35s">
+          <dt class="stat__label">memórias</dt>
+          <dd class="stat__value">
+            <svg class="stat__infinity" viewBox="0 0 200 100" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="inf-grad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#7fe3ff"/>
+                  <stop offset=".5" stop-color="#8b7bff"/>
+                  <stop offset="1" stop-color="#ff5fb8"/>
+                </linearGradient>
+              </defs>
+              <path d="M100 50 C 80 15, 30 15, 30 50 C 30 85, 80 85, 100 50 C 120 15, 170 15, 170 50 C 170 85, 120 85, 100 50 Z" pathLength="1"/>
+            </svg>
+            <span class="sr-only">infinitas</span>
+          </dd>
+        </div>
+      </dl>
+    </section>
+
     <div class="thread" aria-hidden="true" data-reveal="thread"><span></span></div>
 
     <!-- =====================================================================
@@ -204,9 +261,10 @@
          ===================================================================== -->
     <section class="scene gallery-scene" id="memorias" data-scene="memorias" aria-labelledby="titulo-memorias">
       <header class="scene-head">
+        <span class="ghost-no ghost-no--right" aria-hidden="true" data-ghost>02</span>
         <p class="slate" data-reveal><span class="slate__no">Cena 02</span><span class="slate__rule" aria-hidden="true"></span><span class="slate__name">Memórias</span></p>
-        <h2 class="scene-title" id="titulo-memorias" data-reveal style="--d: .12s">Memórias <em>em luz</em></h2>
-        <p class="scene-lede" data-reveal style="--d: .24s">Cada fotografia surge do escuro e ganha a luz que merece. Toque em uma imagem para vê-la ampliada.</p>
+        <h2 class="scene-title" id="titulo-memorias" data-reveal="mask" style="--d: .1s">Memórias <em>em luz</em></h2>
+        <p class="scene-lede" data-reveal style="--d: .3s">Cada fotografia surge do escuro e ganha a luz que merece. Toque em uma imagem para vê-la ampliada.</p>
       </header>
 
       <div class="gallery" data-gallery></div>
@@ -221,9 +279,10 @@
     <section class="scene film-scene" id="filme" data-scene="filme" aria-labelledby="titulo-filme">
       <div class="film__beam" aria-hidden="true"></div>
       <header class="scene-head scene-head--center">
+        <span class="ghost-no ghost-no--left" aria-hidden="true" data-ghost>03</span>
         <p class="slate" data-reveal><span class="slate__no">Cena 03</span><span class="slate__rule" aria-hidden="true"></span><span class="slate__name">O filme</span></p>
-        <h2 class="scene-title" id="titulo-filme" data-reveal style="--d: .12s">O filme dos <em>melhores momentos</em></h2>
-        <p class="scene-lede" data-reveal style="--d: .24s">Uma sessão para rever, quantas vezes quiser, o que merece voltar à tela. Nenhum vídeo começa sozinho: o play é seu.</p>
+        <h2 class="scene-title" id="titulo-filme" data-reveal="mask" style="--d: .1s">O filme dos <em>melhores momentos</em></h2>
+        <p class="scene-lede" data-reveal style="--d: .3s">Uma sessão para rever, quantas vezes quiser, o que merece voltar à tela. Nenhum vídeo começa sozinho: o play é seu.</p>
       </header>
 
       <div class="feature-wrap" data-feature data-reveal="screen"></div>
@@ -240,7 +299,9 @@
             </button>
           </div>
         </div>
-        <ul class="reel__track" data-reel></ul>
+        <div class="reel__strip">
+          <ul class="reel__track" data-reel></ul>
+        </div>
       </div>
       <noscript><p class="noscript-note">Ative o JavaScript para assistir aos vídeos.</p></noscript>
     </section>
@@ -248,7 +309,7 @@
     <div class="thread thread--honor" aria-hidden="true" data-reveal="thread"><span></span></div>
 
     <!-- =====================================================================
-         CENA 04 — OS MELHORES (homenagem)
+         CENA 04 — OS MELHORES (homenagem a Pedro Henrique & Victor Luis)
          ===================================================================== -->
     <section class="scene honor" id="os-melhores" data-scene="melhores" aria-labelledby="titulo-melhores">
       <div class="honor__lights" aria-hidden="true">
@@ -258,8 +319,9 @@
       </div>
 
       <header class="scene-head scene-head--center honor__head">
+        <span class="ghost-no ghost-no--center" aria-hidden="true" data-ghost>04</span>
         <p class="slate" data-reveal><span class="slate__no">Cena 04</span><span class="slate__rule" aria-hidden="true"></span><span class="slate__name">Homenagem</span></p>
-        <h2 class="honor__title" id="titulo-melhores" data-reveal style="--d: .1s">Os melhores.</h2>
+        <h2 class="honor__title" id="titulo-melhores" data-reveal="mask" style="--d: .1s">Os melhores.</h2>
       </header>
 
       <div class="honor__stage" data-honor>
@@ -269,13 +331,13 @@
 
         <div class="honor__credits">
           <p class="honor__names">
-            <span class="honor__name honor__name--a"><span class="honor__ln">Pedro</span> <span class="honor__ln">Henrique</span></span>
+            <span class="honor__name honor__name--a"><span class="honor__ln" data-text="Pedro">Pedro</span> <span class="honor__ln" data-text="Henrique">Henrique</span></span>
             <span class="honor__amp"><span aria-hidden="true">&amp;</span><span class="sr-only">e</span></span>
-            <span class="honor__name honor__name--b"><span class="honor__ln">Vitor</span> <span class="honor__ln">Luis</span></span>
+            <span class="honor__name honor__name--b"><span class="honor__ln" data-text="Victor">Victor</span> <span class="honor__ln" data-text="Luis">Luis</span></span>
           </p>
           <div class="honor__portraits">
             <figure class="honor__portrait honor__portrait--a" data-slot="pedroHenrique"></figure>
-            <figure class="honor__portrait honor__portrait--b" data-slot="vitorLuis"></figure>
+            <figure class="honor__portrait honor__portrait--b" data-slot="victorLuis"></figure>
           </div>
         </div>
       </div>
@@ -289,13 +351,22 @@
       </blockquote>
     </section>
 
-    <div class="thread thread--final" aria-hidden="true" data-reveal="thread"><span></span></div>
+    <!-- Segunda faixa em movimento, levando ao encerramento -->
+    <div class="marquee marquee--alt" aria-hidden="true" data-marquee data-marquee-reverse>
+      <div class="marquee__band">
+        <div class="marquee__track">
+          <span class="marquee__group"><span class="mq-fill">Parabéns, Felipe</span><span class="mq-star"></span><span class="mq-line">Pedro Henrique</span><span class="mq-star"></span><span class="mq-fill">Victor Luis</span><span class="mq-star"></span><span class="mq-line">Os melhores</span><span class="mq-star"></span></span>
+          <span class="marquee__group"><span class="mq-fill">Parabéns, Felipe</span><span class="mq-star"></span><span class="mq-line">Pedro Henrique</span><span class="mq-star"></span><span class="mq-fill">Victor Luis</span><span class="mq-star"></span><span class="mq-line">Os melhores</span><span class="mq-star"></span></span>
+        </div>
+      </div>
+    </div>
 
     <!-- =====================================================================
          CENA 05 — FINAL (encerramento)
          ===================================================================== -->
     <section class="scene finale" id="final" data-scene="final" aria-labelledby="titulo-final" data-finale>
       <div class="finale__dawn" aria-hidden="true"></div>
+      <canvas class="finale__fireworks" aria-hidden="true" data-fireworks></canvas>
 
       <svg class="finale__seventeen" viewBox="0 0 1000 760" aria-hidden="true" focusable="false">
         <defs>
@@ -318,21 +389,26 @@
 
       <div class="finale__content">
         <p class="slate slate--center"><span class="slate__no">Cena 05</span><span class="slate__rule" aria-hidden="true"></span><span class="slate__name">Final</span></p>
+        <p class="finale__dedication">Feliz aniversário, <span>Felipe</span>!</p>
         <h2 class="finale__title" id="titulo-final">
           <span class="finale__years">17 anos.</span>
           <span class="finale__line">E a história está só começando.</span>
         </h2>
         <p class="finale__lede">“Que as melhores lembranças continuem vivas e que muitos outros momentos especiais ainda estejam por vir.”</p>
         <p class="finale__sign">
-          <span class="finale__names">Pedro Henrique <span class="amp">&amp;</span> Vitor Luis</span>
+          <span class="finale__names">Pedro Henrique <span class="amp">&amp;</span> Victor Luis</span>
           <span class="finale__dash" aria-hidden="true">—</span>
           <span class="finale__best">Os melhores!</span>
         </p>
         <div class="finale__actions">
-          <a class="btn btn--primary" href="#abertura" data-back-top>
+          <a class="btn btn--primary" href="#abertura" data-back-top data-jump>
             <svg class="icon" aria-hidden="true"><use href="#i-up"/></svg>
             <span>Voltar ao início</span>
           </a>
+          <button class="btn btn--ghost" type="button" data-celebrate>
+            <svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>
+            <span>Celebrar</span>
+          </button>
           <button class="btn btn--ghost" type="button" data-replay>
             <svg class="icon" aria-hidden="true"><use href="#i-replay"/></svg>
             <span>Rever a abertura</span>
@@ -343,7 +419,7 @@
   </main>
 
   <footer class="footer">
-    <p><span class="footer__brand">Chroma Memories 17</span> <span class="footer__sep" aria-hidden="true">·</span> Pedro Henrique &amp; Vitor Luis <span class="footer__sep" aria-hidden="true">·</span> Os melhores!</p>
+    <p><span class="footer__brand">Chroma Memories 17</span> <span class="footer__sep" aria-hidden="true">·</span> Felipe, 17 anos <span class="footer__sep" aria-hidden="true">·</span> Pedro Henrique &amp; Victor Luis <span class="footer__sep" aria-hidden="true">·</span> Os melhores!</p>
   </footer>
 
   <!-- ===== Visualização ampliada de fotografias ===== -->
