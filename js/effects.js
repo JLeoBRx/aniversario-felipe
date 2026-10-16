@@ -27,11 +27,25 @@
   });
   var scrollDir = 1, velocity = 0, lastScroll = window.pageYOffset || 0, mqLoop = false;
 
+  /* Uma volta inteira da faixa é invisível (as duas metades são iguais).
+     Rodando para trás, a animação não pode chegar ao tempo zero (ali ela
+     termina e a faixa congela), então ganha voltas de folga. */
+  function rewindRoom(anim) {
+    var timing = anim.effect && anim.effect.getTiming ? anim.effect.getTiming() : null;
+    var lap = timing && typeof timing.duration === 'number' ? timing.duration : 0;
+    var t = anim.currentTime;
+    if (!lap || typeof t !== 'number' || t >= lap * 20) return;
+    try { anim.currentTime = t + lap * 100; } catch (e) { /* ignora */ }
+  }
+
   function animationOf(mq) {
     if (mq.anim && mq.anim.playState !== 'idle') return mq.anim;
     if (!mq.track || !mq.track.getAnimations) return null;
     var list = mq.track.getAnimations();
     mq.anim = list.length ? list[0] : null;
+    if (mq.anim && mq.anim.addEventListener) {
+      mq.anim.addEventListener('finish', function () { rewindRoom(this); });
+    }
     return mq.anim;
   }
 
@@ -49,6 +63,7 @@
         mq.applied = mq.rate;
         try { anim.playbackRate = mq.rate; } catch (e) { /* ignora */ }
       }
+      if (mq.rate < 0) rewindRoom(anim);
     });
     if (moving && !reduced()) C.raf(marqueeFrame);
     else mqLoop = false;
